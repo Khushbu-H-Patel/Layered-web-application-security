@@ -34,7 +34,7 @@ The system follows a **layered security model**:
 <img src="Architecture_Diagram/System_Architecture_Diagram.png" alt="Architecture Diagram" width="650" hight="500">
 
 ### Execution Flow
-<img src="Architecture_Diagram/flowchart.png" alt="Execution Flow" width="700" hight="650">
+<img src="Architecture_Diagram/flowchart.png" alt="Execution Flow" width="650" hight="500">
 
 Each layer provides a distinct level of protection, ensuring that malicious traffic is filtered before reaching the application.
 
