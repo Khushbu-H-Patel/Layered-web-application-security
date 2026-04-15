@@ -31,10 +31,10 @@ This project demonstrates a **defense-in-depth approach** to securing web applic
 
 The system follows a **layered security model**:
 
-![Architecture Diagram](Architecture_Diagram/System_Architecture_Diagram.png)
+![Architecture Diagram](Architecture _Diagram/SSystem_Architecture_Diagram.png)
 
 ### Execution Flow
-![Execution Flow](Architecture_Diagram/flowchart.png)
+![Execution Flow](Architecture _Diagram/flowchart.png)
 
 Each layer provides a distinct level of protection, ensuring that malicious traffic is filtered before reaching the application.
 
@@ -89,27 +89,29 @@ Each layer provides a distinct level of protection, ensuring that malicious traf
 ---
 
 ## 📁 Project Structure
+
+```
 layered-web-application-security/
 │
 ├── Configuration_Files/
-│ ├── Network_Firewall/
-│ ├── Nginx/
-│ └── WAF/
+│   ├── Network_Firewall/
+│   ├── Nginx/
+│   └── WAF/
 │
 ├── Database/
 ├── Flask_Application/
 ├── Logs/
-│ ├── modsecurity/
-│ └── nginx/
+│   ├── modsecurity/
+│   └── nginx/
 │
 ├── Payloads/
 ├── Screenshots/
-│ ├── After_implementing_nftables/
-│ ├── After_Implementing_WAF/
-│ └── Baseline_Attacks/
+│   ├── After_implementing_nftables/
+│   ├── After_Implementing_WAF/
+│   └── Baseline_Attacks/
 │
 └── README.md
-
+```
 
 ---
 
