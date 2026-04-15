@@ -1,0 +1,482 @@
+---dYjToWh8---A--
+[03/Apr/2026:18:04:47 +0000] 177523948768.985594 192.168.6.133 60992 192.168.6.134 80
+---dYjToWh8---B--
+GET /login?user=test&pass=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---dYjToWh8---D--
+
+---dYjToWh8---E--
+<html>\x0d\x0a<head><title>502 Bad Gateway</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>502 Bad Gateway</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---dYjToWh8---F--
+HTTP/1.1 502
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:04:47 GMT
+Content-Length: 166
+Content-Type: text/html
+Connection: keep-alive
+
+---dYjToWh8---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948768.985594"] [ref "o0,13o0,13v46,13"]
+
+---dYjToWh8---I--
+
+---dYjToWh8---J--
+
+---dYjToWh8---Z--
+
+---PK2Z8ZH6---A--
+[03/Apr/2026:18:04:47 +0000] 177523948797.161369 192.168.6.133 60992 192.168.6.134 80
+---PK2Z8ZH6---B--
+GET /login?user=admin'--&pass=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---PK2Z8ZH6---D--
+
+---PK2Z8ZH6---E--
+<html>\x0d\x0a<head><title>403 Forbidden</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>403 Forbidden</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---PK2Z8ZH6---F--
+HTTP/1.1 403
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:04:47 GMT
+Content-Length: 162
+Content-Type: text/html
+Connection: keep-alive
+
+---PK2Z8ZH6---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948797.161369"] [ref "o0,13o0,13v50,13"]
+ModSecurity: Warning. detected SQLi using libinjection. [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "46"] [id "942100"] [rev ""] [msg "SQL Injection Attack Detected via libinjection"] [data "Matched Data: sc found within ARGS:user: admin'--"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948797.161369"] [ref "v16,8"]
+ModSecurity: Access denied with code 403 (phase 2). Matched "Operator `Ge' with parameter `5' against variable `TX:BLOCKING_INBOUND_ANOMALY_SCORE' (Value: `8' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "222"] [id "949110"] [rev ""] [msg "Inbound Anomaly Score Exceeded (Total Score: 8)"] [data ""] [severity "0"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "anomaly-evaluation"] [tag "OWASP_CRS"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948797.161369"] [ref ""]
+
+---PK2Z8ZH6---I--
+
+---PK2Z8ZH6---J--
+
+---PK2Z8ZH6---Z--
+
+---6tRJHupj---A--
+[03/Apr/2026:18:04:47 +0000] 177523948745.632179 192.168.6.133 60996 192.168.6.134 80
+---6tRJHupj---B--
+GET /login?user=admin'%20OR%201%3d1--&pass=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---6tRJHupj---D--
+
+---6tRJHupj---E--
+<html>\x0d\x0a<head><title>403 Forbidden</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>403 Forbidden</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---6tRJHupj---F--
+HTTP/1.1 403
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:04:47 GMT
+Content-Length: 162
+Content-Type: text/html
+Connection: keep-alive
+
+---6tRJHupj---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948745.632179"] [ref "o0,13o0,13v63,13"]
+ModSecurity: Warning. detected SQLi using libinjection. [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "46"] [id "942100"] [rev ""] [msg "SQL Injection Attack Detected via libinjection"] [data "Matched Data: s&1c found within ARGS:user: admin' OR 1=1--"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948745.632179"] [ref "v16,15"]
+ModSecurity: Access denied with code 403 (phase 2). Matched "Operator `Ge' with parameter `5' against variable `TX:BLOCKING_INBOUND_ANOMALY_SCORE' (Value: `8' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "222"] [id "949110"] [rev ""] [msg "Inbound Anomaly Score Exceeded (Total Score: 8)"] [data ""] [severity "0"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "anomaly-evaluation"] [tag "OWASP_CRS"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948745.632179"] [ref ""]
+
+---6tRJHupj---I--
+
+---6tRJHupj---J--
+
+---6tRJHupj---Z--
+
+---Cer4HWV5---A--
+[03/Apr/2026:18:04:47 +0000] 177523948751.111323 192.168.6.133 60992 192.168.6.134 80
+---Cer4HWV5---B--
+GET /login?user='%20UNION%20SELECT%20'admin','admin123'--&pass=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---Cer4HWV5---D--
+
+---Cer4HWV5---E--
+<html>\x0d\x0a<head><title>403 Forbidden</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>403 Forbidden</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---Cer4HWV5---F--
+HTTP/1.1 403
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:04:47 GMT
+Content-Length: 162
+Content-Type: text/html
+Connection: keep-alive
+
+---Cer4HWV5---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948751.111323"] [ref "o0,13o0,13v83,13"]
+ModSecurity: Warning. detected SQLi using libinjection. [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "46"] [id "942100"] [rev ""] [msg "SQL Injection Attack Detected via libinjection"] [data "Matched Data: sUEsc found within ARGS:user: ' UNION SELECT 'admin','admin123'--"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948751.111323"] [ref "v16,35"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)[\"'`](?:[\s\x0b]*![\s\x0b]*[\"'0-9A-Z_-z]|;?[\s\x0b]*(?:having|select|union\b[\s\x0b]*(?:all|(?:distin|sele)ct))\b[\s\x0b]*[^\s\x0b])|\b(?:(?:(?:c(?:onnection_id|urrent_user)|database|schema|user (311 characters omitted)' against variable `ARGS:user' (Value: `' UNION SELECT 'admin','admin123'--' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "206"] [id "942190"] [rev ""] [msg "Detects MSSQL code execution and information gathering attempts"] [data "Matched Data: ' UNION SELECT ' found within ARGS:user: ' UNION SELECT 'admin','admin123'"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948751.111323"] [ref "o0,16v16,35t:urlDecodeUni,t:removeCommentsChar"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)\b(?:(?:alter|(?:(?:cre|trunc|upd)at|renam)e|de(?:lete|sc)|(?:inser|selec)t|load)[\s\x0b]+(?:char|group_concat|load_file)\b[\s\x0b]*\(?|end[\s\x0b]*?\);)|[\s\x0b\(]load_file[\s\x0b]*?\(|[\"'`][\s\ (1249 characters omitted)' against variable `ARGS:user' (Value: `' UNION SELECT 'admin','admin123'--' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-942-APPLICATION-ATTACK-SQLI.conf"] [line "480"] [id "942360"] [rev ""] [msg "Detects concatenated basic SQL injection and SQLLFI attempts"] [data "Matched Data: ' UNION SELECT found within ARGS:user: ' UNION SELECT 'admin','admin123'--"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-sqli"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-SQLI"] [tag "capec/1000/152/248/66"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948751.111323"] [ref "o0,14v16,35t:urlDecodeUni"]
+ModSecurity: Access denied with code 403 (phase 2). Matched "Operator `Ge' with parameter `5' against variable `TX:BLOCKING_INBOUND_ANOMALY_SCORE' (Value: `18' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "222"] [id "949110"] [rev ""] [msg "Inbound Anomaly Score Exceeded (Total Score: 18)"] [data ""] [severity "0"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "anomaly-evaluation"] [tag "OWASP_CRS"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523948751.111323"] [ref ""]
+
+---Cer4HWV5---I--
+
+---Cer4HWV5---J--
+
+---Cer4HWV5---Z--
+
+---W6gr7Kfj---A--
+[03/Apr/2026:18:08:56 +0000] 177523973672.286958 192.168.6.133 38158 192.168.6.134 80
+---W6gr7Kfj---B--
+GET /login?user=test&pass=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---W6gr7Kfj---D--
+
+---W6gr7Kfj---E--
+<html>\x0d\x0a<head><title>502 Bad Gateway</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>502 Bad Gateway</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---W6gr7Kfj---F--
+HTTP/1.1 502
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:08:56 GMT
+Content-Length: 166
+Content-Type: text/html
+Connection: keep-alive
+
+---W6gr7Kfj---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/login"] [unique_id "177523973672.286958"] [ref "o0,13o0,13v46,13"]
+
+---W6gr7Kfj---I--
+
+---W6gr7Kfj---J--
+
+---W6gr7Kfj---Z--
+
+---qMActrkI---A--
+[03/Apr/2026:18:08:56 +0000] 177523973685.715979 192.168.6.133 38158 192.168.6.134 80
+---qMActrkI---B--
+GET /favicon.ico HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=6
+Accept: image/avif,image/webp,image/png,image/svg+xml,image/*;q=0.8,*/*;q=0.5
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Referer: http://192.168.6.134/login?user=test&pass=test
+
+---qMActrkI---D--
+
+---qMActrkI---E--
+<html>\x0d\x0a<head><title>502 Bad Gateway</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>502 Bad Gateway</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---qMActrkI---F--
+HTTP/1.1 502
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:08:56 GMT
+Content-Length: 166
+Content-Type: text/html
+Connection: keep-alive
+
+---qMActrkI---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/favicon.ico"] [unique_id "177523973685.715979"] [ref "o0,13o0,13v32,13"]
+
+---qMActrkI---I--
+
+---qMActrkI---J--
+
+---qMActrkI---Z--
+
+---9kqFH5LR---A--
+[03/Apr/2026:18:09:50 +0000] 177523979023.202936 192.168.6.133 42006 192.168.6.134 80
+---9kqFH5LR---B--
+GET /search?q=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---9kqFH5LR---D--
+
+---9kqFH5LR---E--
+<html>\x0d\x0a<head><title>502 Bad Gateway</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>502 Bad Gateway</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---9kqFH5LR---F--
+HTTP/1.1 502
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:09:50 GMT
+Content-Length: 166
+Content-Type: text/html
+Connection: keep-alive
+
+---9kqFH5LR---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523979023.202936"] [ref "o0,13o0,13v34,13"]
+
+---9kqFH5LR---I--
+
+---9kqFH5LR---J--
+
+---9kqFH5LR---Z--
+
+---hBWyhz3B---A--
+[03/Apr/2026:18:09:50 +0000] 177523979041.700376 192.168.6.133 42006 192.168.6.134 80
+---hBWyhz3B---B--
+GET /search?q=%3cscript%3ealert(1)%3c%2fscript%3e HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---hBWyhz3B---D--
+
+---hBWyhz3B---E--
+<html>\x0d\x0a<head><title>403 Forbidden</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>403 Forbidden</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---hBWyhz3B---F--
+HTTP/1.1 403
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:09:50 GMT
+Content-Length: 162
+Content-Type: text/html
+Connection: keep-alive
+
+---hBWyhz3B---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523979041.700376"] [ref "o0,13o0,13v65,13"]
+ModSecurity: Warning. detected XSS using libinjection. [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "83"] [id "941100"] [rev ""] [msg "XSS Attack Detected via libinjection"] [data "Matched Data: XSS data found within ARGS:q: <script>alert(1)</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523979041.700376"] [ref "v14,25t:utf8toUnicode,t:urlDecodeUni,t:htmlEntityDecode,t:jsDecode,t:cssDecode,t:removeNulls"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)<script[^>]*>[\s\S]*?' against variable `ARGS:q' (Value: `<script>alert(1)</script>' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "110"] [id "941110"] [rev ""] [msg "XSS Filter - Category 1: Script Tag Vector"] [data "Matched Data: <script> found within ARGS:q: <script>alert(1)</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523979041.700376"] [ref "o0,8v14,25t:utf8toUnicode,t:urlDecodeUni,t:htmlEntityDecode,t:jsDecode,t:cssDecode,t:removeNulls"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)<[^0-9<>A-Z_a-z]*(?:[^\s\x0b\"'<>]*:)?[^0-9<>A-Z_a-z]*[^0-9A-Z_a-z]*?(?:s[^0-9A-Z_a-z]*?(?:c[^0-9A-Z_a-z]*?r[^0-9A-Z_a-z]*?i[^0-9A-Z_a-z]*?p[^0-9A-Z_a-z]*?t|t[^0-9A-Z_a-z]*?y[^0-9A-Z_a-z]*?l[^0-9A (4396 characters omitted)' against variable `ARGS:q' (Value: `<script>alert(1)</script>' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "248"] [id "941160"] [rev ""] [msg "NoScript XSS InjectionChecker: HTML Injection"] [data "Matched Data: <script found within ARGS:q: <script>alert(1)</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523979041.700376"] [ref "o0,7v14,25t:utf8toUnicode,t:urlDecodeUni,t:htmlEntityDecode,t:jsDecode,t:cssDecode,t:removeNulls"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)\b(?:eval|set(?:timeout|interval)|new[\s\x0b]+Function|a(?:lert|tob)|btoa|(?:promp|impor)t|con(?:firm|sole\.(?:log|dir))|fetch)[\s\x0b]*[\(\{]' against variable `ARGS:q' (Value: `<script>alert(1)</script>' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "816"] [id "941390"] [rev ""] [msg "Javascript method detected"] [data "Matched Data: alert( found within ARGS:q: <script>alert(1)</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-nodejs"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523979041.700376"] [ref "o8,6v14,25t:htmlEntityDecode,t:jsDecode"]
+ModSecurity: Access denied with code 403 (phase 2). Matched "Operator `Ge' with parameter `5' against variable `TX:BLOCKING_INBOUND_ANOMALY_SCORE' (Value: `23' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "222"] [id "949110"] [rev ""] [msg "Inbound Anomaly Score Exceeded (Total Score: 23)"] [data ""] [severity "0"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "anomaly-evaluation"] [tag "OWASP_CRS"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523979041.700376"] [ref ""]
+
+---hBWyhz3B---I--
+
+---hBWyhz3B---J--
+
+---hBWyhz3B---Z--
+
+---5k0D2fuq---A--
+[03/Apr/2026:18:09:50 +0000] 17752397900.973901 192.168.6.133 42022 192.168.6.134 80
+---5k0D2fuq---B--
+GET /search?q=%3cscript%3ealert('XSS%20Attack')%3c%2fscript%3e HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---5k0D2fuq---D--
+
+---5k0D2fuq---E--
+<html>\x0d\x0a<head><title>403 Forbidden</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>403 Forbidden</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---5k0D2fuq---F--
+HTTP/1.1 403
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:09:50 GMT
+Content-Length: 162
+Content-Type: text/html
+Connection: keep-alive
+
+---5k0D2fuq---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "17752397900.973901"] [ref "o0,13o0,13v78,13"]
+ModSecurity: Warning. detected XSS using libinjection. [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "83"] [id "941100"] [rev ""] [msg "XSS Attack Detected via libinjection"] [data "Matched Data: XSS data found within ARGS:q: <script>alert('XSS Attack')</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "17752397900.973901"] [ref "v14,36t:utf8toUnicode,t:urlDecodeUni,t:htmlEntityDecode,t:jsDecode,t:cssDecode,t:removeNulls"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)<script[^>]*>[\s\S]*?' against variable `ARGS:q' (Value: `<script>alert('XSS Attack')</script>' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "110"] [id "941110"] [rev ""] [msg "XSS Filter - Category 1: Script Tag Vector"] [data "Matched Data: <script> found within ARGS:q: <script>alert('XSS Attack')</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "17752397900.973901"] [ref "o0,8v14,36t:utf8toUnicode,t:urlDecodeUni,t:htmlEntityDecode,t:jsDecode,t:cssDecode,t:removeNulls"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)<[^0-9<>A-Z_a-z]*(?:[^\s\x0b\"'<>]*:)?[^0-9<>A-Z_a-z]*[^0-9A-Z_a-z]*?(?:s[^0-9A-Z_a-z]*?(?:c[^0-9A-Z_a-z]*?r[^0-9A-Z_a-z]*?i[^0-9A-Z_a-z]*?p[^0-9A-Z_a-z]*?t|t[^0-9A-Z_a-z]*?y[^0-9A-Z_a-z]*?l[^0-9A (4396 characters omitted)' against variable `ARGS:q' (Value: `<script>alert('XSS Attack')</script>' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "248"] [id "941160"] [rev ""] [msg "NoScript XSS InjectionChecker: HTML Injection"] [data "Matched Data: <script found within ARGS:q: <script>alert('XSS Attack')</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "17752397900.973901"] [ref "o0,7v14,36t:utf8toUnicode,t:urlDecodeUni,t:htmlEntityDecode,t:jsDecode,t:cssDecode,t:removeNulls"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)\b(?:eval|set(?:timeout|interval)|new[\s\x0b]+Function|a(?:lert|tob)|btoa|(?:promp|impor)t|con(?:firm|sole\.(?:log|dir))|fetch)[\s\x0b]*[\(\{]' against variable `ARGS:q' (Value: `<script>alert('XSS Attack')</script>' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-941-APPLICATION-ATTACK-XSS.conf"] [line "816"] [id "941390"] [rev ""] [msg "Javascript method detected"] [data "Matched Data: alert( found within ARGS:q: <script>alert('XSS Attack')</script>"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-nodejs"] [tag "attack-xss"] [tag "xss-perf-disable"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-XSS"] [tag "capec/1000/152/242"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "17752397900.973901"] [ref "o8,6v14,36t:htmlEntityDecode,t:jsDecode"]
+ModSecurity: Access denied with code 403 (phase 2). Matched "Operator `Ge' with parameter `5' against variable `TX:BLOCKING_INBOUND_ANOMALY_SCORE' (Value: `23' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "222"] [id "949110"] [rev ""] [msg "Inbound Anomaly Score Exceeded (Total Score: 23)"] [data ""] [severity "0"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "anomaly-evaluation"] [tag "OWASP_CRS"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "17752397900.973901"] [ref ""]
+
+---5k0D2fuq---I--
+
+---5k0D2fuq---J--
+
+---5k0D2fuq---Z--
+
+---04SrvB72---A--
+[03/Apr/2026:18:11:24 +0000] 177523988435.293752 192.168.6.133 60046 192.168.6.134 80
+---04SrvB72---B--
+GET /search?q=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---04SrvB72---D--
+
+---04SrvB72---E--
+<html>\x0d\x0a<head><title>502 Bad Gateway</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>502 Bad Gateway</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---04SrvB72---F--
+HTTP/1.1 502
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:11:24 GMT
+Content-Length: 166
+Content-Type: text/html
+Connection: keep-alive
+
+---04SrvB72---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/search"] [unique_id "177523988435.293752"] [ref "o0,13o0,13v34,13"]
+
+---04SrvB72---I--
+
+---04SrvB72---J--
+
+---04SrvB72---Z--
+
+---vvHBybcg---A--
+[03/Apr/2026:18:11:53 +0000] 177523991329.696459 192.168.6.133 35494 192.168.6.134 80
+---vvHBybcg---B--
+GET /file?name=test HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---vvHBybcg---D--
+
+---vvHBybcg---E--
+<html>\x0d\x0a<head><title>502 Bad Gateway</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>502 Bad Gateway</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---vvHBybcg---F--
+HTTP/1.1 502
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:11:53 GMT
+Content-Length: 166
+Content-Type: text/html
+Connection: keep-alive
+
+---vvHBybcg---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991329.696459"] [ref "o0,13o0,13v35,13"]
+
+---vvHBybcg---I--
+
+---vvHBybcg---J--
+
+---vvHBybcg---Z--
+
+---k6cP5gaB---A--
+[03/Apr/2026:18:11:53 +0000] 177523991393.783117 192.168.6.133 35494 192.168.6.134 80
+---k6cP5gaB---B--
+GET /file?name=%2fetc%2fpasswd HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---k6cP5gaB---D--
+
+---k6cP5gaB---E--
+<html>\x0d\x0a<head><title>403 Forbidden</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>403 Forbidden</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---k6cP5gaB---F--
+HTTP/1.1 403
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:11:53 GMT
+Content-Length: 162
+Content-Type: text/html
+Connection: keep-alive
+
+---k6cP5gaB---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991393.783117"] [ref "o0,13o0,13v46,13"]
+ModSecurity: Warning. Matched "Operator `PmFromFile' with parameter `lfi-os-files.data' against variable `ARGS:name' (Value: `/etc/passwd' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "104"] [id "930120"] [rev ""] [msg "OS File Access Attempt"] [data "Matched Data: etc/passwd found within ARGS:name: /etc/passwd"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-LFI"] [tag "capec/1000/255/153/126"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991393.783117"] [ref "o1,10v15,11t:utf8toUnicode,t:urlDecodeUni,t:normalizePathWin"]
+ModSecurity: Warning. Matched "Operator `PmFromFile' with parameter `unix-shell.data' against variable `ARGS:name' (Value: `/etc/passwd' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-932-APPLICATION-ATTACK-RCE.conf"] [line "706"] [id "932160"] [rev ""] [msg "Remote Command Execution: Unix Shell Code Found"] [data "Matched Data: etc/passwd found within ARGS:name: /etc/passwd"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-shell"] [tag "platform-unix"] [tag "attack-rce"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-RCE"] [tag "capec/1000/152/248/88"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991393.783117"] [ref "o1,10v15,11t:cmdLine,t:normalizePath"]
+ModSecurity: Access denied with code 403 (phase 2). Matched "Operator `Ge' with parameter `5' against variable `TX:BLOCKING_INBOUND_ANOMALY_SCORE' (Value: `13' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "222"] [id "949110"] [rev ""] [msg "Inbound Anomaly Score Exceeded (Total Score: 13)"] [data ""] [severity "0"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "anomaly-evaluation"] [tag "OWASP_CRS"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991393.783117"] [ref ""]
+
+---k6cP5gaB---I--
+
+---k6cP5gaB---J--
+
+---k6cP5gaB---Z--
+
+---OYMOBGEB---A--
+[03/Apr/2026:18:11:54 +0000] 177523991450.175893 192.168.6.133 35506 192.168.6.134 80
+---OYMOBGEB---B--
+GET /file?name=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd HTTP/1.1
+Host: 192.168.6.134
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0
+Priority: u=0, i
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+
+---OYMOBGEB---D--
+
+---OYMOBGEB---E--
+<html>\x0d\x0a<head><title>403 Forbidden</title></head>\x0d\x0a<body>\x0d\x0a<center><h1>403 Forbidden</h1></center>\x0d\x0a<hr><center>nginx/1.24.0 (Ubuntu)</center>\x0d\x0a</body>\x0d\x0a</html>\x0d\x0a
+
+---OYMOBGEB---F--
+HTTP/1.1 403
+Server: nginx/1.24.0 (Ubuntu)
+Date: Fri, 03 Apr 2026 18:11:54 GMT
+Content-Length: 162
+Content-Type: text/html
+Connection: keep-alive
+
+---OYMOBGEB---H--
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^([\d.]+|\[[\da-f:]+\]|[\da-f:]+)(:[\d]+)?$)' against variable `REQUEST_HEADERS:Host' (Value: `192.168.6.134' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-920-PROTOCOL-ENFORCEMENT.conf"] [line "757"] [id "920350"] [rev ""] [msg "Host header is a numeric IP address"] [data "192.168.6.134"] [severity "4"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-protocol"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/PROTOCOL-ENFORCEMENT"] [tag "capec/1000/210/272"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991450.175893"] [ref "o0,13o0,13v79,13"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?i)(?:[/\x5c]|%(?:2(?:f|5(?:2f|5c|c(?:1%259c|0%25af))|%46)|5c|c(?:0%(?:[2aq]f|5c|9v)|1%(?:[19p]c|8s|af))|(?:bg%q|(?:e|f(?:8%8)?0%8)0%80%a)f|u(?:221[56]|EFC8|F025|002f)|%3(?:2(?:%(?:%6|4)6|F)|5%%63)|1 (394 characters omitted)' against variable `ARGS:name' (Value: `../../../../etc/passwd' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "35"] [id "930100"] [rev ""] [msg "Path Traversal Attack (/../) or (/.../)"] [data "Matched Data: /../ found within ARGS:name: ../../../../etc/passwd"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-LFI"] [tag "capec/1000/255/153/126"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991450.175893"] [ref "o17,12v4,59o2,4v15,22"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^|[/;\x5c])\.{2,3}[/;\x5c]' against variable `REQUEST_URI_RAW' (Value: `/file?name=%2e%2e%2f%2e%2e%2f%2e%2e%2f%2e%2e%2fetc%2fpasswd' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "73"] [id "930110"] [rev ""] [msg "Path Traversal Attack (/../) or (/.../)"] [data "Matched Data: /../ found within REQUEST_URI_RAW: /file?name=../../../../etc/passwd"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-LFI"] [tag "capec/1000/255/153/126"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991450.175893"] [ref "o13,4v4,59t:urlDecodeUni"]
+ModSecurity: Warning. Matched "Operator `Rx' with parameter `(?:^|[/;\x5c])\.{2,3}[/;\x5c]' against variable `ARGS:name' (Value: `../../../../etc/passwd' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "73"] [id "930110"] [rev ""] [msg "Path Traversal Attack (/../) or (/.../)"] [data "Matched Data: ../ found within ARGS:name: ../../../../etc/passwd"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-LFI"] [tag "capec/1000/255/153/126"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-LFI"] [tag "capec/1000/255/153/126"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991450.175893"] [ref "o13,4v4,59t:urlDecodeUnio0,3v15,22"]
+ModSecurity: Warning. Matched "Operator `PmFromFile' with parameter `lfi-os-files.data' against variable `ARGS:name' (Value: `../../../../etc/passwd' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-930-APPLICATION-ATTACK-LFI.conf"] [line "104"] [id "930120"] [rev ""] [msg "OS File Access Attempt"] [data "Matched Data: etc/passwd found within ARGS:name: ../../../../etc/passwd"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-multi"] [tag "platform-multi"] [tag "attack-lfi"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-LFI"] [tag "capec/1000/255/153/126"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991450.175893"] [ref "o12,10v15,22t:utf8toUnicode,t:urlDecodeUni,t:normalizePathWin"]
+ModSecurity: Warning. Matched "Operator `PmFromFile' with parameter `unix-shell.data' against variable `ARGS:name' (Value: `../../../../etc/passwd' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-932-APPLICATION-ATTACK-RCE.conf"] [line "706"] [id "932160"] [rev ""] [msg "Remote Command Execution: Unix Shell Code Found"] [data "Matched Data: etc/passwd found within ARGS:name: ../../../../etc/passwd"] [severity "2"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "application-multi"] [tag "language-shell"] [tag "platform-unix"] [tag "attack-rce"] [tag "paranoia-level/1"] [tag "OWASP_CRS"] [tag "OWASP_CRS/ATTACK-RCE"] [tag "capec/1000/152/248/88"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991450.175893"] [ref "o12,10v15,22t:cmdLine,t:normalizePath"]
+ModSecurity: Access denied with code 403 (phase 2). Matched "Operator `Ge' with parameter `5' against variable `TX:BLOCKING_INBOUND_ANOMALY_SCORE' (Value: `33' ) [file "/etc/nginx/modsec/coreruleset/rules/REQUEST-949-BLOCKING-EVALUATION.conf"] [line "222"] [id "949110"] [rev ""] [msg "Inbound Anomaly Score Exceeded (Total Score: 33)"] [data ""] [severity "0"] [ver "OWASP_CRS/4.25.0"] [maturity "0"] [accuracy "0"] [tag "anomaly-evaluation"] [tag "OWASP_CRS"] [hostname "192.168.6.134"] [uri "/file"] [unique_id "177523991450.175893"] [ref ""]
+
+---OYMOBGEB---I--
+
+---OYMOBGEB---J--
+
+---OYMOBGEB---Z--
+
