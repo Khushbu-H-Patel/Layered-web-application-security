@@ -30,10 +30,11 @@ This project demonstrates a **defense-in-depth approach** to securing web applic
 ## 🧱 System Architecture and Execution Flow
 
 The system follows a **layered security model**:
-![Architecture Diagram](Architecture Diagram/System_Architecture_Diagram.png)
+
+![Architecture Diagram](Architecture_Diagram/System_Architecture_Diagram.png)
 
 ### Execution Flow
-![Execution Flow](Architecture Diagram/flowchart.png)
+![Execution Flow](Architecture_Diagram/flowchart.png)
 
 Each layer provides a distinct level of protection, ensuring that malicious traffic is filtered before reaching the application.
 
@@ -90,20 +91,23 @@ Each layer provides a distinct level of protection, ensuring that malicious traf
 ## 📁 Project Structure
 layered-web-application-security/
 │
-├── Configuration Files/
-│   ├── Network Firewall/
-│   ├── Nginx/
-│   └── WAF/
+├── Configuration_Files/
+│ ├── Network_Firewall/
+│ ├── Nginx/
+│ └── WAF/
+│
 ├── Database/
-├── Flask Application/
+├── Flask_Application/
 ├── Logs/
-│   ├── modsecurity/
-│   └── nginx/
+│ ├── modsecurity/
+│ └── nginx/
+│
 ├── Payloads/
 ├── Screenshots/
-│   ├── After implementing nftables/
-│   ├── After Implementing WAF/
-│   └── Baseline Attacks Before Implementing Controls/
+│ ├── After_implementing_nftables/
+│ ├── After_Implementing_WAF/
+│ └── Baseline_Attacks/
+│
 └── README.md
 
 
@@ -139,4 +143,4 @@ This project demonstrates that implementing multiple security layers significant
 - OWASP Core Rule Set (CRS): https://github.com/coreruleset/coreruleset
 - Nginx Documentation: https://nginx.org
 - ModSecurity: https://modsecurity.org
-- Nmap: https://nmap.org
+- Nmap: https://nmap.org
