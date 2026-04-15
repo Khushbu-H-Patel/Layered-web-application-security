@@ -31,7 +31,7 @@ This project demonstrates a **defense-in-depth approach** to securing web applic
 
 The system follows a **layered security model**:
 
-<img src="Architecture_Diagram/System_Architecture_Diagram.png" alt="Architecture Diagram" width="450" hight="300">
+<img src="Architecture_Diagram/System_Architecture_Diagram.png" alt="Architecture Diagram" width="650" hight="500">
 
 ### Execution Flow
 ![Execution Flow](Architecture_Diagram/flowchart.png)
